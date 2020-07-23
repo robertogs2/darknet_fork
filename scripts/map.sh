@@ -1,6 +1,9 @@
-data=aaa/butterfly-tiny-yolov4-augmented/obj.data
-cfg=aaa/butterfly-tiny-yolov4-augmented/butterfly-tiny-yolov4.cfg
-folder=/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-augmented/backup
+model=butterfly-tiny-yolov4
+
+data=../models/${model}/obj.data
+cfg=../models/${model}/butterfly-tiny-yolov4.cfg
+folder=../models/${model}/backup
+
 result=""
 echo -n "" > log.txt
 for file in ${folder}/*.weights; do

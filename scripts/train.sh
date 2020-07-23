@@ -1,6 +1,9 @@
-data=aaa/butterfly-tiny-yolov4-augmented/obj.data
-cfg=aaa/butterfly-tiny-yolov4-augmented/butterfly-tiny-yolov4.cfg
-weights=/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-augmented/backup/butterfly-tiny-yolov4_last.weights
-log=aaa/butterfly-tiny-yolov4-augmented/log.txt
+model=butterfly-tiny-yolov4 #model inside models folder
+weight_id=last
 
-./darknet detector train ${data} ${cfg} ${weights} -map | tee ${log} --append
+cfg=../models/${model}/butterfly-tiny-yolov4.cfg
+data=../models/${model}/data/obj.data
+weights=../models/${model}/backup/butterfly-tiny-yolov4_${weight_id}.weights
+log=../models/${model}/logs/log_train.txt
+
+../darknet detector train ${data} ${cfg} ${weights} -map | tee ${log} --append
