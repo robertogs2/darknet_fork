@@ -1,0 +1,5 @@
+classes= 1
+train  = /home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-base/train.txt
+valid  = /home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-base/test.txt
+names = /home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-base/obj.names
+backup = /home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-base/backup

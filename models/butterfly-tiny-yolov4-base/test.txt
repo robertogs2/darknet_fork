@@ -1,0 +1,2 @@
+/home/roberto/Documents/pdg/data/4Butterflies/cameraC/*.png*.png
+/home/roberto/Documents/pdg/data/8Butterflies/CameraC/*.png*.png

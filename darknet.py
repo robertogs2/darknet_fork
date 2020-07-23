@@ -436,18 +436,23 @@ def performDetect(imagePath="data/dog.jpg", thresh= 0.25, configPath = "./cfg/yo
                     [xCoord + xEntent, yCoord + yExtent],
                     [xCoord + xEntent, yCoord]
                 ]
+                
                 # Wiggle it around to make a 3px border
                 rr, cc = draw.polygon_perimeter([x[1] for x in boundingBox], [x[0] for x in boundingBox], shape= shape)
                 rr2, cc2 = draw.polygon_perimeter([x[1] + 1 for x in boundingBox], [x[0] for x in boundingBox], shape= shape)
                 rr3, cc3 = draw.polygon_perimeter([x[1] - 1 for x in boundingBox], [x[0] for x in boundingBox], shape= shape)
                 rr4, cc4 = draw.polygon_perimeter([x[1] for x in boundingBox], [x[0] + 1 for x in boundingBox], shape= shape)
                 rr5, cc5 = draw.polygon_perimeter([x[1] for x in boundingBox], [x[0] - 1 for x in boundingBox], shape= shape)
+                
                 boxColor = (int(255 * (1 - (confidence ** 2))), int(255 * (confidence ** 2)), 0)
+                #boxColor = 255#(int(255 * (1 - (confidence ** 2))))
+                #print(boxColor)
                 draw.set_color(image, (rr, cc), boxColor, alpha= 0.8)
                 draw.set_color(image, (rr2, cc2), boxColor, alpha= 0.8)
                 draw.set_color(image, (rr3, cc3), boxColor, alpha= 0.8)
                 draw.set_color(image, (rr4, cc4), boxColor, alpha= 0.8)
                 draw.set_color(image, (rr5, cc5), boxColor, alpha= 0.8)
+                
             if not makeImageOnly:
                 io.imshow(image)
                 io.show()
@@ -458,7 +463,7 @@ def performDetect(imagePath="data/dog.jpg", thresh= 0.25, configPath = "./cfg/yo
             }
         except Exception as e:
             print("Unable to show image: "+str(e))
-    return detections
+    return detections, image
 
 def performBatchDetect(thresh= 0.25, configPath = "./cfg/yolov4.cfg", weightPath = "yolov4.weights", metaPath= "./cfg/coco.data", hier_thresh=.5, nms=.45, batch_size=3):
     import cv2
@@ -526,6 +531,33 @@ def performBatchDetect(thresh= 0.25, configPath = "./cfg/yolov4.cfg", weightPath
     return batch_boxes, batch_scores, batch_classes    
 
 if __name__ == "__main__":
-    print(performDetect())
+    configPath = "/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-augmented/butterfly-tiny-yolov4.cfg"
+    weightPath = "/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-augmented/backup/butterfly-tiny-yolov4_85000_lat.weights"
+    # configPath = "/home/roberto/Code/Github/darknet/aaa/other/cfgs/butterfly-tiny-yolov3-3500.cfg"
+    # weightPath = "/home/roberto/Code/Github/darknet/aaa/other/weights/butterfly-tiny-yolov3-3500_170000.weights"
+    
+    
+    metaPath = "/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-raw/obj.data"
+
+    # for i in range (1000, 7000):
+    #     imagePath = f"/home/roberto/Documents/pdg/data/16Butterflies/CameraA/7-{i}.png"
+    #     detections, image = performDetect(imagePath=imagePath, thresh= 0.4, configPath = configPath, weightPath = weightPath, metaPath= metaPath, makeImageOnly=True)
+    #     import cv2
+    #     cv2.imshow('image', image)
+    #     cv2.waitKey(1)
+
+   
+    imagePath = f"/home/roberto/Documents/pdg/data/real/IMG_20180828_161154.jpg"
+    detections, image = performDetect(imagePath=imagePath, thresh= 0.3, configPath = configPath, weightPath = weightPath, metaPath= metaPath, makeImageOnly=True)
+    import cv2
+    scale_percent = 30 # percent of original size
+    width = int(image.shape[1] * scale_percent / 100)
+    height = int(image.shape[0] * scale_percent / 100)
+    dim = (width, height)
+    # resize image
+    resized = cv2.resize(image, dim, interpolation = cv2.INTER_AREA)
+    cv2.imshow('image', resized)
+    cv2.waitKey(10000)
+
     #Uncomment the following line to see batch inference working 
     #print(performBatchDetect())

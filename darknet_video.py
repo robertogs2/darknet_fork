@@ -42,9 +42,14 @@ altNames = None
 def YOLO():
 
     global metaMain, netMain, altNames
-    configPath = "./cfg/yolov4.cfg"
-    weightPath = "./yolov4.weights"
-    metaPath = "./cfg/coco.data"
+    configPath = "/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-augmented/butterfly-tiny-yolov4.cfg"
+    weightPath = "/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-augmented/backup/butterfly-tiny-yolov4_85000_lat.weights"
+    metaPath = "/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-raw/obj.data"
+    videoPath = "/home/roberto/Downloads/Inf_Male1_Take1_NoField.MOV"
+    # videoPath = "test.mp4"
+    # configPath = "./cfg/yolov4.cfg"
+    # weightPath = "./yolov4.weights"
+    # metaPath = "./cfg/coco.data"
     if not os.path.exists(configPath):
         raise ValueError("Invalid config path `" +
                          os.path.abspath(configPath)+"`")
@@ -80,7 +85,7 @@ def YOLO():
         except Exception:
             pass
     #cap = cv2.VideoCapture(0)
-    cap = cv2.VideoCapture("test.mp4")
+    cap = cv2.VideoCapture(videoPath)
     cap.set(3, 1280)
     cap.set(4, 720)
     out = cv2.VideoWriter(
@@ -102,7 +107,7 @@ def YOLO():
 
         darknet.copy_image_from_bytes(darknet_image,frame_resized.tobytes())
 
-        detections = darknet.detect_image(netMain, metaMain, darknet_image, thresh=0.25)
+        detections = darknet.detect_image(netMain, metaMain, darknet_image, thresh=0.5)
         image = cvDrawBoxes(detections, frame_resized)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         print(1/(time.time()-prev_time))
