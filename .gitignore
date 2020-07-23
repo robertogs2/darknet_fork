@@ -55,3 +55,13 @@ include/darknet/
 uselib
 uselib_track
 darknet
+
+# Own
+output.*
+counters_per_class.txt
+*__pycache__*
+anchors.txt
+bad.list
+bad_label.list
+results/
+results*
