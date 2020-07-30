@@ -42,10 +42,10 @@ altNames = None
 def YOLO():
 
     global metaMain, netMain, altNames
-    configPath = "/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-augmented/butterfly-tiny-yolov4.cfg"
-    weightPath = "/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-augmented/backup/butterfly-tiny-yolov4_85000_lat.weights"
-    metaPath = "/home/roberto/Code/Github/darknet/aaa/butterfly-tiny-yolov4-raw/obj.data"
-    videoPath = "/home/roberto/Downloads/Inf_Male1_Take1_NoField.MOV"
+    configPath = "/home/roberto/Code/Github/darknet_fork/models/butterfly-tiny-yolov4/butterfly-tiny-yolov4.cfg"
+    weightPath = "/home/roberto/Code/Github/darknet_fork/models/butterfly-tiny-yolov4/best_weights/butterfly-tiny-yolov4_best2.weights"
+    metaPath = "/home/roberto/Code/Github/darknet_fork/models/butterfly-tiny-yolov4/data/obj.data"
+    videoPath = "/home/roberto/Documents/pdg/data/4Butterflies/output.mp4"
     # videoPath = "test.mp4"
     # configPath = "./cfg/yolov4.cfg"
     # weightPath = "./yolov4.weights"
@@ -107,7 +107,7 @@ def YOLO():
 
         darknet.copy_image_from_bytes(darknet_image,frame_resized.tobytes())
 
-        detections = darknet.detect_image(netMain, metaMain, darknet_image, thresh=0.5)
+        detections = darknet.detect_image(netMain, metaMain, darknet_image, thresh=0.6)
         image = cvDrawBoxes(detections, frame_resized)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         print(1/(time.time()-prev_time))
