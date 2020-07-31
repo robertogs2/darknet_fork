@@ -1,6 +1,6 @@
 classes= 1
-train= /home/roberto/Code/Github/darknet_fork/models/butterfly-tiny-yolov4/data/train.txt
-valid= /home/roberto/Code/Github/darknet_fork/models/butterfly-tiny-yolov4/data/test.txt
-names= /home/roberto/Code/Github/darknet_fork/models/butterfly-tiny-yolov4/data/obj.names
-backup= /home/roberto/Code/Github/darknet_fork/models/butterfly-tiny-yolov4/backup
+train= /home/rgutierrez/git/darknet_fork/models2/butterfly-tiny-yolov4/data/train.txt
+valid= /home/rgutierrez/git/darknet_fork/models2/butterfly-tiny-yolov4/data/test.txt
+names= /home/rgutierrez/git/darknet_fork/models2/butterfly-tiny-yolov4/data/obj.names
+backup= /home/rgutierrez/git/darknet_fork/models2/butterfly-tiny-yolov4/backup
 
