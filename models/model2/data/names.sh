@@ -15,11 +15,12 @@ test_f () {
   done
 }
 
-parent=/media/DATA/asolis/Monarch_Butterfly_Data/
+parent=/media/DATA/rgutierrez/
 
-train_f "${parent}/synth_data/1Butterfly/"
-train_f "${parent}/synth_data/2Butterflies/"
-train_f "${parent}/synth_data/4Butterflies/"
-train_f "${parent}/synth_data/16Butterflies/"
+train_f "${parent}/synth/1Butterfly/"
+train_f "${parent}/synth/2Butterflies/"
+train_f "${parent}/synth/4Butterflies/"
+train_f "${parent}/synth/16Butterflies/"
+train_f "${parent}/false/"
 
-test_f "${parent}/synth_data/8Butterflies/"
+test_f "${parent}/synth/8Butterflies/"
