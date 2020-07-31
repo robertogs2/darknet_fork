@@ -1,6 +1,6 @@
 classes= 1
-train= /home/rgutierrez/git/darknet_fork/models2/butterfly-tiny-yolov4/data/train.txt
-valid= /home/rgutierrez/git/darknet_fork/models2/butterfly-tiny-yolov4/data/test.txt
-names= /home/rgutierrez/git/darknet_fork/models2/butterfly-tiny-yolov4/data/obj.names
+train= /home/rgutierrez/git/darknet_fork/models/model2/data/train.txt
+valid= /home/rgutierrez/git/darknet_fork/models/model2/data/test.txt
+names= /home/rgutierrez/git/darknet_fork/models/model2/data/obj.names
 backup= /media/DATA/rgutierrez/weights/model2/
 

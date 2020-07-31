@@ -1,0 +1,72 @@
+CUDA status Error: file: ./src/dark_cuda.c : () : line: 39 : build time: Jul 23 2020 - 18:26:36 
+
+ CUDA Error: initialization error
+CUDA status Error: file: ./src/dark_cuda.c : () : line: 39 : build time: Jul 31 2020 - 12:12:17 
+
+ CUDA Error: initialization error
+CUDA status Error: file: ./src/dark_cuda.c : () : line: 39 : build time: Jul 31 2020 - 12:12:17 
+
+ CUDA Error: initialization error
+CUDA status Error: file: ./src/dark_cuda.c : () : line: 39 : build time: Jul 31 2020 - 12:12:17 
+
+ CUDA Error: initialization error
+butterfly-ty4
+net.optimized_memory = 0 
+mini_batch = 4, batch = 64, time_steps = 1, train = 1 
+nms_kind: greedynms (1), beta = 0.600000 
+nms_kind: greedynms (1), beta = 0.600000 
+
+ seen 64, trained: 0 K-images (0 Kilo-batches_64) 
+Learning Rate: 0.001, Momentum: 0.9, Decay: 0.0005
+ Detection layer: 30 - type = 27 
+ Detection layer: 37 - type = 27 
+Resizing, random_coef = 1.40 
+
+ 928 x 512 
+ try to allocate additional workspace_size = 26.22 MB 
+ CUDA allocate done! 
+Loaded: 1.399362 seconds
+
+ 1: 939.443359, 939.443359 avg loss, 0.000000 rate, 2.802179 seconds, 64 images, -1.000000 hours left
+Loaded: 0.058240 seconds
+
+ 2: 939.519958, 939.451050 avg loss, 0.000000 rate, 2.750151 seconds, 128 images, 583.780864 hours left
+butterfly-ty4
+net.optimized_memory = 0 
+mini_batch = 4, batch = 64, time_steps = 1, train = 1 
+nms_kind: greedynms (1), beta = 0.600000 
+nms_kind: greedynms (1), beta = 0.600000 
+
+ seen 64, trained: 0 K-images (0 Kilo-batches_64) 
+Learning Rate: 0.001, Momentum: 0.9, Decay: 0.0005
+ Detection layer: 30 - type = 27 
+ Detection layer: 37 - type = 27 
+Resizing, random_coef = 1.40 
+
+ 928 x 512 
+ try to allocate additional workspace_size = 26.22 MB 
+ CUDA allocate done! 
+Loaded: 2.440562 seconds
+
+ 1: 955.500427, 955.500427 avg loss, 0.000000 rate, 2.988835 seconds, 64 images, -1.000000 hours left
+Loaded: 0.000012 seconds
+
+ 2: 954.042786, 955.354675 avg loss, 0.000000 rate, 2.675104 seconds, 128 images, 754.384282 hours left
+Loaded: 0.000015 seconds
+
+ 3: 954.502930, 955.269531 avg loss, 0.000000 rate, 2.834981 seconds, 192 images, 750.557361 hours left
+Loaded: 0.200052 seconds - performance bottleneck on CPU or Disk HDD/SSD
+
+ 4: 955.954590, 955.338013 avg loss, 0.000000 rate, 2.765948 seconds, 256 images, 746.990844 hours left
+Loaded: 0.107825 seconds - performance bottleneck on CPU or Disk HDD/SSD
+
+ 5: 955.627197, 955.366943 avg loss, 0.000000 rate, 2.665153 seconds, 320 images, 743.642006 hours left
+Loaded: 0.149301 seconds - performance bottleneck on CPU or Disk HDD/SSD
+
+ 6: 955.615173, 955.391785 avg loss, 0.000000 rate, 2.689572 seconds, 384 images, 740.058457 hours left
+Loaded: 0.000011 seconds
+
+ 7: 954.105591, 955.263184 avg loss, 0.000000 rate, 2.604905 seconds, 448 images, 736.602292 hours left
+Loaded: 0.467072 seconds - performance bottleneck on CPU or Disk HDD/SSD
+
+ 8: 954.953674, 955.232239 avg loss, 0.000000 rate, 2.795235 seconds, 512 images, 732.855616 hours left
