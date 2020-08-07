@@ -1,13 +1,13 @@
-model=butterfly-tiny-yolov4
+model=model2
 
-data=../models/${model}/obj.data
-cfg=../models/${model}/butterfly-tiny-yolov4.cfg
-folder=../models/${model}/backup
+data=../models/${model}/data/obj.data
+cfg=../models/${model}/butterfly-ty4.cfg
+folder=/media/DATA/rgutierrez/weights/${model}
 
 result=""
 echo -n "" > log.txt
 for file in ${folder}/*.weights; do
     echo ${file} >> log.txt
-    ./darknet detector map ${data} ${cfg} ${file} 1>>log.txt
+    ../darknet detector map ${data} ${cfg} ${file} 1>>log.txt
 done
 
